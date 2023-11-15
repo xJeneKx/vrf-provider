@@ -1,0 +1,13 @@
+{
+	"name": "vrf-provider",
+	"version": "0.0.01",
+	"description": "VRF provider",
+	"main": "start.js",
+	"repository": "https://github.com/xJeneKx/vrf-provider.git",
+	"author": "xJeneKx",
+	"license": "MIT",
+	"dependencies": {
+		"ocore": "git+https://github.com/byteball/ocore.git",
+		"headless-obyte": "git+https://github.com/byteball/headless-obyte.git"
+	}
+}
