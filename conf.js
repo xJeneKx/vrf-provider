@@ -30,4 +30,4 @@ exports.from_email = '';
 
 
 exports.min_payment = 1000000; // in bytes
-exports.VRF_registry = 'F3QL3P6N4V7JGQB33ZVHFWMPPV2W2LPZ';
+exports.VRF_registry = process.env.testnet ? 'FSF3T43AGXK2BF7PH63HHLP3NW7IE7CJ' : 'ABSEBCYX5LYW2JLBFM3SKWRD5QQGJXOA';
