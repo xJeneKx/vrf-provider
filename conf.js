@@ -17,6 +17,7 @@ exports.deviceName = 'VRF provider';
 exports.permanent_pairing_secret = '*'; // * allows to pair with any code, the code is passed as 2nd param to the pairing event handler
 exports.control_addresses = [process.env.control_address || ''];
 exports.payout_address = process.env.payout_address || '';
+exports.spend_unconfirmed = 'all';
 
 exports.bIgnoreUnpairRequests = false;
 exports.bSingleAddress = true;
