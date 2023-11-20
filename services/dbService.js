@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const db = require('ocore/db.js');
+const { min_payment } = require("ocore/conf");
 
 let _myAddress = '';
 
@@ -15,26 +16,16 @@ async function getAuthors(unit) {
 	return rows.map(row => row.address);
 }
 
-async function getMessages(unit) {
+async function isValidPayment(unit) {
 	const myAddress = await getMyAddress();
-	const rows = await db.query(`
-        SELECT app,
-               CASE app
-                   WHEN 'payment' THEN (SELECT amount
-                                        FROM outputs
-                                        WHERE unit = ?
-                                          AND address = ?
-                                          AND asset IS NULL)
-                   ELSE payload END pPayload
-        FROM messages
-        WHERE unit = ?`, [unit, myAddress, unit]);
+	const rows = await db.query(`SELECT 1
+                                 FROM outputs
+                                 WHERE unit = ?
+                                   AND address = ?
+                                   AND asset IS NULL
+                                   AND amount >= ?;`, [unit, myAddress, min_payment]);
 	
-	const result = {};
-	for (let { app, pPayload } of rows) {
-		result[app] = pPayload
-	}
-	
-	return result;
+	return !!rows.length;
 }
 
 async function saveProofResult(unit_request, unit_response, proof) {
@@ -43,7 +34,7 @@ async function saveProofResult(unit_request, unit_response, proof) {
 
 module.exports = {
 	getMyAddress,
-	getMessages,
+	isValidPayment,
 	getAuthors,
 	saveProofResult,
 }

@@ -29,3 +29,4 @@ exports.from_email = '';
 
 
 exports.min_payment = 1000000; // in bytes
+exports.VRF_registry = 'F3QL3P6N4V7JGQB33ZVHFWMPPV2W2LPZ';

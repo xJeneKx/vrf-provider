@@ -14,7 +14,7 @@ function generateProof(unit) {
 }
 
 function getPubKey() {
-	return pubKey;
+	return pubKey.trim();
 }
 
 module.exports = {
