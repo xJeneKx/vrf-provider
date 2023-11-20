@@ -17,12 +17,13 @@ payout_address - you wallet address for receive payments
 ```
 node getMyAddress.js
 ```
-Copy the address and fund it using Obyte wallet. 100000 bytes (0.0001 GB)
+Copy the address and fund it using Obyte wallet. 1000000 bytes (0.001 GB)
 
 ### Run
 ```
 node start.js
 ```
+The console will display the public key for adding the bot, as well as the address for replenishment and use in AA
 
 
 ## Help
