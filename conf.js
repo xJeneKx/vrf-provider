@@ -29,5 +29,5 @@ exports.admin_email = '';
 exports.from_email = '';
 
 
-exports.min_payment = 1000000; // in bytes
+exports.min_payment = 50000; // in bytes
 exports.VRF_registry = '3MWX3HXQHLYRZXRVK5K7JTWAIQS3QX3D';
