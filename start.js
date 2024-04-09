@@ -15,7 +15,7 @@ const { getMyBalanceInBytes } = require("./services/ocoreService");
 const { sleep } = require("./helpers/sleep");
 
 eventBus.once('headless_wallet_ready', async () => {
-	await sleep(3);
+	await sleep(5);
 	const balance = await getMyBalanceInBytes();
 	if (balance < min_payment) {
 		throw new Error(`small balance(${balance} bytes), please refill address: ` + await getMyAddress());

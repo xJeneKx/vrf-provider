@@ -25,7 +25,7 @@ fs.writeFileSync(pathToPrivKey, privateKey.export({
 }));
 
 fs.writeFileSync(pathToPubKey, publicKey.export({
-	type: 'pkcs1',
+	type: 'spki',
 	format: 'pem',
 }));
 
