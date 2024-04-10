@@ -30,4 +30,4 @@ exports.from_email = '';
 
 
 exports.min_payment = 50000; // in bytes
-exports.VRF_registry = '3MWX3HXQHLYRZXRVK5K7JTWAIQS3QX3D';
+exports.VRF_registry = 'AOIMCWGHR5NI4UI4N4UENWDDJ7SR5W5C'; // release VRF registry address
